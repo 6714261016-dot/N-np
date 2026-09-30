@@ -1,0 +1,2210 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ห้องเรียนรู้เทคโนโลยี</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Tahoma", "Arial", sans-serif;
+            background: #f5f9ff;
+            color: #333;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
+            background: linear-gradient(
+                135deg,
+                #2563eb,
+                #7c3aed
+            );
+
+            color: white;
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            box-shadow:
+                0 3px 15px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .logo {
+
+            font-size: 22px;
+            font-weight: bold;
+
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+        }
+
+
+        nav a {
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 8px 14px;
+
+            border-radius: 20px;
+
+            transition: 0.3s;
+
+            cursor: pointer;
+        }
+
+
+        nav a:hover {
+
+            background:
+                rgba(255, 255, 255, 0.2);
+
+        }
+
+
+        nav a.active {
+
+            background:
+                rgba(255, 255, 255, 0.3);
+
+        }
+
+
+        /* =========================
+           PAGE SYSTEM
+        ========================= */
+
+        .page {
+            display: none !important;
+        }
+
+        .page.active {
+            display: block !important;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+
+            min-height: 500px;
+
+            display: flex;
+            justify-content:
+                space-between;
+            align-items: center;
+
+            padding: 70px 10%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #dbeafe,
+                    #ede9fe,
+                    #fef3c7
+                );
+        }
+
+
+        .hero-text {
+
+            max-width: 650px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size: 45px;
+
+            line-height: 1.3;
+
+            color: #1d4ed8;
+
+            margin-bottom: 20px;
+
+        }
+
+
+        .hero p {
+
+            font-size: 20px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .hero-image {
+
+            text-align: center;
+
+            font-size: 90px;
+
+            line-height: 1.4;
+
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .button {
+
+            display: inline-block;
+
+            margin-top: 20px;
+
+            padding: 12px 25px;
+
+            background: #2563eb;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            border: none;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+        }
+
+
+        .button:hover {
+
+            background: #1d4ed8;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .purple {
+
+            background: #7c3aed;
+
+        }
+
+
+        .purple:hover {
+
+            background: #6d28d9;
+
+        }
+
+
+        /* =========================
+           ปุ่มเริ่มเรียนรู้
+        ========================= */
+
+        .start-button {
+
+            display: inline-block;
+
+            margin-top: 25px;
+
+            padding: 18px 45px;
+
+            background: #2563eb;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 40px;
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            border: none;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow:
+                0 6px 15px rgba(37, 99, 235, 0.30);
+
+        }
+
+
+        .start-button:hover {
+
+            background: #1d4ed8;
+
+            transform:
+                translateY(-3px) scale(1.03);
+
+            box-shadow:
+                0 8px 20px rgba(37, 99, 235, 0.35);
+
+        }
+
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+
+            padding: 70px 8%;
+
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            font-size: 35px;
+
+            color: #1d4ed8;
+
+            margin-bottom: 40px;
+
+        }
+
+
+        .container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+        }
+
+
+        /* =========================
+           INFO
+        ========================= */
+
+        .info-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .info-card {
+
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+            border-top:
+                5px solid #2563eb;
+
+        }
+
+
+        .info-card h3 {
+
+            color: #2563eb;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* =========================
+           LESSON
+        ========================= */
+
+        .lesson-section {
+
+            background: #eef6ff;
+
+        }
+
+
+        .lesson-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+
+        }
+
+
+        .lesson-card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+
+        }
+
+
+        .lesson-card:hover {
+
+            transform:
+                translateY(-8px);
+
+        }
+
+
+        .lesson-icon {
+
+            font-size: 55px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .lesson-card h3 {
+
+            color: #2563eb;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        /* =========================
+           MEDIA
+        ========================= */
+
+        .media-card {
+
+            background: white;
+
+            padding: 30px;
+
+            margin-bottom: 25px;
+
+            border-radius: 20px;
+
+            display: flex;
+
+            gap: 25px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+        }
+
+
+        .media-icon {
+
+            font-size: 60px;
+
+            min-width: 80px;
+
+            text-align: center;
+
+        }
+
+
+        .media-content {
+
+            flex: 1;
+
+        }
+
+
+        .media-content h3 {
+
+            color: #2563eb;
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .media-content p {
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =========================
+           AI
+        ========================= */
+
+        .ai-box {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ede9fe,
+                    #dbeafe
+                );
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            margin-top: 15px;
+
+        }
+
+
+        .ai-box h3 {
+
+            color: #7c3aed;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .ai-example {
+
+            text-align: center;
+
+            font-size: 55px;
+
+            margin-top: 20px;
+
+        }
+
+
+        /* =========================
+           E-BOOK
+        ========================= */
+
+        .ebook-box {
+
+            text-align: center;
+
+            background: #fff7ed;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+        }
+
+
+        .ebook-box h3 {
+
+            color: #ea580c;
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #172554;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+
+            header {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+            }
+
+
+            nav {
+
+                justify-content: center;
+
+            }
+
+
+            nav a {
+
+                font-size: 14px;
+
+                padding: 7px 10px;
+
+            }
+
+
+            .hero {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+
+            .hero h1 {
+
+                font-size: 32px;
+
+            }
+
+
+            .hero-image {
+
+                margin-top: 30px;
+
+                font-size: 60px;
+
+            }
+
+
+            .info-grid,
+            .lesson-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .media-card {
+
+                flex-direction: column;
+
+            }
+
+
+            .section {
+
+                padding: 50px 5%;
+
+            }
+
+
+            /* ปุ่มเริ่มเรียนรู้บนมือถือ */
+
+            .start-button {
+
+                font-size: 21px;
+
+                padding: 16px 35px;
+
+                width: auto;
+
+            }
+
+        }
+
+
+        /* =========================
+           E-BOOK FLIPHTML5
+        ========================= */
+
+        .ebook-frame {
+
+            width: 100%;
+
+            max-width: 1400px;
+
+            margin: 25px auto 25px;
+
+            background: white;
+
+            padding: 5px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+            overflow: hidden;
+
+        }
+
+
+        .ebook-frame iframe {
+
+            display: block;
+
+            width: 100%;
+
+            height: 850px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: #f5f5f5;
+
+        }
+
+
+        .ebook-button-area {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+        }
+
+
+        @media (max-width: 800px) {
+
+            .ebook-frame {
+
+                padding: 8px;
+
+                border-radius: 14px;
+
+            }
+
+
+            .ebook-frame iframe {
+
+                height: 700px;
+
+                border-radius: 8px;
+
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .ebook-frame iframe {
+
+                height: 600px;
+
+            }
+
+        }
+
+
+        /* =========================
+           QUIZ / GIMKIT
+        ========================= */
+
+        .quiz-box {
+
+            width: 100%;
+
+            max-width: 1400px;
+
+            margin: 0 auto;
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+        }
+
+
+        .quiz-button-area {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+        }
+
+
+        /* =========================
+           WORDWALL
+        ========================= */
+
+        .wordwall-box {
+
+            width: 100%;
+
+            max-width: 1400px;
+
+            margin: 30px auto 0;
+
+            background: white;
+
+            padding: 35px 25px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.08);
+
+            text-align: center;
+
+        }
+
+
+        .wordwall-icon {
+
+            font-size: 64px;
+
+            margin: 15px 0;
+
+        }
+
+
+        .wordwall-description {
+
+            max-width: 700px;
+
+            margin: 0 auto 25px;
+
+            line-height: 1.8;
+
+        }
+
+
+        .wordwall-button-area {
+
+            text-align: center;
+
+            margin-top: 20px;
+
+        }
+
+
+        @media (max-width: 800px) {
+
+            .quiz-box,
+            .wordwall-box {
+
+                padding: 20px 10px;
+
+                border-radius: 14px;
+
+            }
+
+
+            .wordwall-icon {
+
+                font-size: 52px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         HEADER
+    ================================================== -->
+
+    <header>
+
+        <div class="logo">
+
+            💻 ห้องเรียนรู้เทคโนโลยี
+
+        </div>
+
+
+        <nav>
+
+            <a
+                onclick="showPage('home')"
+                class="active">
+
+                หน้าหลัก
+
+            </a>
+
+
+            <a
+                onclick="showPage('lesson')">
+
+                เนื้อหา
+
+            </a>
+
+
+            <a
+                onclick="showPage('media')">
+
+                สื่อการสอน
+
+            </a>
+
+
+            <a
+                onclick="showPage('ebook')">
+
+                E-book
+
+            </a>
+
+
+            <a
+                onclick="showPage('quiz')">
+
+                แบบทดสอบ
+
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ==================================================
+         HOME
+    ================================================== -->
+
+    <section
+        id="home"
+        class="page active hero">
+
+
+        <div class="hero-text">
+
+
+            <h1>
+
+                ห้องเรียนรู้เทคโนโลยี
+
+                <br>
+
+                อย่างสร้างสรรค์
+
+            </h1>
+
+
+            <p>
+                <h2>
+                    ระบบทางเทคโนโลยี
+                </h2>
+            </p>
+
+
+            <p>
+                <h2>
+                    และ
+                </h2>
+            </p>
+
+
+            <p>
+                <h2>
+                    การเขียนโปรแกรมอย่างง่ายด้วย Code.org
+                </h2>
+            </p>
+
+
+            <!-- ปุ่มเริ่มเรียนรู้ -->
+
+            <button
+                class="start-button"
+                onclick="showPage('lesson')">
+
+                🚀 เริ่มเรียนรู้
+
+            </button>
+
+
+        </div>
+
+
+
+        <div class="hero-image">
+
+            💻
+            🧩
+            ⚙️
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         LESSON
+    ================================================== -->
+
+    <section
+        id="lesson"
+        class="page section lesson-section">
+
+
+        <div class="container">
+
+
+            <h2 class="section-title">
+
+                📌 รายละเอียดบทเรียนและตัวชี้วัด
+
+            </h2>
+
+
+
+            <!-- รายละเอียดบทเรียน -->
+
+            <div class="info-grid">
+
+
+                <!-- รายวิชา -->
+
+                <div class="info-card">
+
+
+                    <h3>
+
+                        📚 รายวิชา
+
+                    </h3>
+
+
+                    <p>
+
+                        1. วิทยาศาสตร์และเทคโนโลยี
+
+                    </p>
+
+
+                    <p>
+
+                        (การออกแบบและเทคโนโลยี)
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        2. วิทยาศาสตร์และเทคโนโลยี
+
+                    </p>
+
+
+                    <p>
+
+                        (วิทยาการคำนวณ)
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- มาตรฐาน -->
+
+                <div class="info-card">
+
+
+                    <h3>
+
+                        🎯 มาตรฐานการเรียนรู้
+
+                    </h3>
+
+
+                    <p>
+
+                        <strong>ว 4.1</strong>
+                        เข้าใจแนวคิดหลักของเทคโนโลยี
+                        เพื่อการดำรงชีวิตในสังคมที่มีการเปลี่ยนแปลง
+                        อย่างรวดเร็ว ใช้ความรู้และทักษะทางด้านวิทยาศาสตร์
+                        คณิตศาสตร์ และศาสตร์อื่น ๆ เพื่อแก้ปัญหา
+                        หรือพัฒนางานอย่างมีความคิดสร้างสรรค์
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        <strong>ว 4.2</strong>
+                        เข้าใจและใช้แนวคิดเชิงคำนวณ
+                        ในการแก้ปัญหาที่พบในชีวิตจริง
+                        อย่างเป็นขั้นตอนและเป็นระบบ
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- ตัวชี้วัด -->
+
+                <div class="info-card">
+
+
+                    <h3>
+
+                        ⭐ ตัวชี้วัด
+
+                    </h3>
+
+
+                    <p>
+
+                        <strong>ว 4.1 ม.1/1:</strong>
+                        อธิบายแนวคิดหลักของเทคโนโลยี
+                        ในชีวิตประจำวัน และวิเคราะห์สาเหตุ
+                        หรือปัจจัยที่ส่งผลต่อการเปลี่ยนแปลง
+                        ของเทคโนโลยี
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        <strong>ว 4.2 ป.2/2:</strong>
+                        เขียนโปรแกรมอย่างง่ายโดยใช้ซอฟต์แวร์
+                        หรือสื่อ และตรวจหาข้อผิดพลาดของโปรแกรม
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- สาระการเรียนรู้ -->
+
+            <div
+                class="info-card"
+                style="margin-top:25px;">
+
+
+                <h3>
+
+                    📖 สาระการเรียนรู้
+
+                </h3>
+
+
+                <p>
+
+                    ว 4.1 ม.1/1: ระบบทางเทคโนโลยี เป็นกลุ่มของส่วนต่าง ๆ
+                    ตั้งแต่สองส่วนขึ้นไปประกอบเข้าด้วยกัน
+                    และทำงานร่วมกันเพื่อให้บรรลุวัตถุประสงค์
+                    ประกอบด้วย ตัวป้อน (Input)
+                    กระบวนการ (Process)
+                    ผลผลิต (Output)
+                    และข้อมูลย้อนกลับ (Feedback)
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    ว 4.2 ป.2/2: ซอฟต์แวร์หรือสื่อที่ใช้ในการเขียนโปรแกรม
+                    เช่น การใช้บัตรคำสั่งแสดงการเขียนโปรแกรม
+                    และ Code.org
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             เนื้อหาตามตัวชี้วัด
+        ================================================== -->
+
+        <div class="container">
+
+
+            <h2 class="section-title">
+
+                📚 เนื้อหาตามตัวชี้วัด
+
+            </h2>
+
+
+
+            <div class="lesson-grid">
+
+
+                <!-- ระบบทางเทคโนโลยี -->
+
+                <div class="lesson-card">
+
+
+                    <div class="lesson-icon">
+
+                        💻
+
+                    </div>
+
+
+                    <h3>
+
+                        1. ระบบทางเทคโนโลยี
+
+                    </h3>
+
+
+                    <p>
+
+                        วิชา วิทยาศาสตร์ เทคโนโลยี (การออกแบบและเทคโนโลยี)
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        ชั้นมัธยมศึกษาปีที่ 1
+                        มาตรฐาน ว 4.1 เข้าใจแนวคิดหลักของเทคโนโลยีเพื่อการดำรงชีวิตในสังคมที่มีการเปลี่ยนแปลงอย่างรวดเร็ว
+                        ใช้ความรู้และทักษะทางด้านวิทยาศาสตร์ คณิตศาสตร์ และศาสตร์อื่น ๆ
+                        เพื่อแก้ปัญหาหรือพัฒนางานอย่างมีความคิดสร้างสรรค์
+                        ด้วยกระบวนการออกแบบเชิงวิศวกรรม เลือกใช้เทคโนโลยีอย่างเหมาะสม
+                        โดยคำนึงถึงผลกระทบต่อชีวิต สังคม และสิ่งแวดล้อม
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        ตัวชี้วัด : อธิบายแนวคิดหลักของเทคโนโลยีในชีวิตประจำวัน
+                        และวิเคราะห์สาเหตุหรือปัจจัยที่ส่งผลต่อการเปลี่ยนแปลงของเทคโนโลยี
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        สาระการเรียนรู้แกนกลาง : ระบบทางเทคโนโลยี เป็นกลุ่มของส่วนต่าง ๆ
+                        ตั้งแต่สองส่วนขึ้นไปประกอบเข้าด้วยกัน
+                        และทำงานร่วมกันเพื่อให้บรรลุวัตถุประสงค์
+                        โดยในการทำงานของระบบทางเทคโนโลยีจะประกอบไปด้วยตัวป้อน (input)
+                        กระบวนการ (process) และผลผลิต (output) ที่มีสัมพันธ์กัน
+                        นอกจากนี้ระบบทางเทคโนโลยียังมีข้อมูลย้อนกลับ (feedback)
+                        เพื่อใช้ปรับปรุงการทำงานให้ตรงตามวัตถุประสงค์
+                        ซึ่งการวิเคราะห์ระบบทางเทคโนโลยีจะช่วยให้เข้าใจองค์ประกอบ
+                        และการทำงานของเทคโนโลยี รวมถึงสามารถปรับปรุงให้เทคโนโลยีทำงานได้ตามต้องการ
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        ระบบทางเทคโนโลยี คือ กลุ่มของส่วนต่าง ๆ
+                        ที่ทำงานร่วมกันเพื่อให้บรรลุวัตถุประสงค์ที่กำหนดไว้
+                        โดยแต่ละส่วนมีความสัมพันธ์กัน หากส่วนใดส่วนหนึ่งเกิดปัญหา
+                        ก็อาจส่งผลให้ทั้งระบบทำงานได้ไม่สมบูรณ์
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        ระบบทางเทคโนโลยีประกอบด้วยองค์ประกอบสำคัญ 4 ส่วน ได้แก่
+                        ตัวป้อน (Input) กระบวนการ (Process)
+                        ผลผลิต (Output) และข้อมูลย้อนกลับ (Feedback)
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        เครื่องซักผ้า เริ่มจาก ตัวป้อน คือ เสื้อผ้า น้ำ ผงซักฟอก
+                        และพลังงานไฟฟ้า จากนั้นเข้าสู่กระบวนการ คือ การซัก
+                        การล้าง และการปั่นแห้ง เมื่อทำงานเสร็จ เราจะได้ผลผลิต
+                        คือ เสื้อผ้าที่สะอาด และหากตรวจสอบแล้วพบว่าเสื้อผ้ายังมีคราบสกปรก
+                        เราอาจเลือกซักอีกครั้งหรือเปลี่ยนโปรแกรมการซัก
+                        ซึ่งเป็นข้อมูลย้อนกลับ ที่ช่วยให้การทำงานมีประสิทธิภาพมากขึ้น
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        จากตัวอย่างนี้ จะเห็นได้ว่าองค์ประกอบทั้ง 4 ส่วนทำงานเชื่อมโยงกัน
+                        หากไม่มีไฟฟ้า เครื่องซักผ้าก็ไม่สามารถทำงานได้
+                        หรือหากเลือกโปรแกรมการซักไม่เหมาะสม
+                        เสื้อผ้าอาจไม่สะอาดตามต้องการ
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        ดังนั้น การวิเคราะห์ระบบทางเทคโนโลยี
+                        จะช่วยให้เราเข้าใจว่าเทคโนโลยีแต่ละชนิดทำงานอย่างไร
+                        รู้จักวิเคราะห์ปัญหา และสามารถปรับปรุงหรือพัฒนาเทคโนโลยี
+                        ให้ตอบสนองความต้องการได้ดียิ่งขึ้น
+
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- Code.org -->
+
+                <div class="lesson-card">
+
+
+                    <div class="lesson-icon">
+
+                        🧩
+
+                    </div>
+
+
+                    <h3>
+
+                        2. Code.org
+
+                    </h3>
+
+
+                    <p>
+
+                        วิชา วิทยาศาสตร์ เทคโนโลยี (วิทยาการคำนวณ)
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        ชั้นประถมศึกษาปีที่ 2/2
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        มาตรฐาน ว 4.2 เข้าใจและใช้แนวคิดเชิงคำนวณ
+                        ในการแก้ปัญหาที่พบในชีวิตจริงอย่างเป็นขั้นตอนและเป็นระบบ
+                        ใช้เทคโนโลยีสารสนเทศและการสื่อสารในการเรียนรู้
+                        การทำงาน และการแก้ปัญหาได้อย่างมีประสิทธิภาพ
+                        รู้เท่าทัน และมีจริยธรรม
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        ตัวชี้วัด : เขียนโปรแกรมอย่างง่าย
+                        โดยใช้ซอฟต์แวร์หรือสื่อ และตรวจหาข้อผิดพลาดของโปรแกรม
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        สาระการเรียนรู้แกนกลาง : ซอฟต์แวร์หรือสื่อที่ใช้ในการเขียนโปรแกรม
+                        เช่น ใช้บัตรคำสั่งแสดงการเขียนโปรแกรม, Code.org
+
+                    </p>
+
+
+                    <p>
+
+                        การเขียนโปรแกรม คือ การสั่งงานคอมพิวเตอร์ให้ทำงานตามขั้นตอน
+                        ที่เรากำหนดไว้ เช่น การสั่งให้ตัวละครเดินหน้า
+                        เลี้ยวซ้าย หรือเลี้ยวขวา เพื่อไปยังจุดหมายที่ต้องการ
+                        เราต้องนำบล็อกคำสั่งมาเรียงลำดับอย่างถูกต้อง
+                        เพราะคอมพิวเตอร์จะทำงานตามคำสั่งทีละขั้นตอน
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        ตัวอย่างเช่น หากต้องการให้ตัวละครเดินไปถึงเป้าหมาย
+                        เราอาจใช้คำสั่งเดินหน้า 3 ครั้ง แล้วเลี้ยวขวา 1 ครั้ง
+                        จากนั้นเดินหน้าต่อไป เมื่อเรียงคำสั่งถูกต้อง
+                        ตัวละครก็จะสามารถไปถึงเป้าหมายได้สำเร็จ
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        แต่บางครั้งโปรแกรมอาจทำงานไม่ตรงตามที่เราต้องการ
+                        เช่น ตัวละครเดินผิดทาง หรือไปไม่ถึงจุดหมาย
+                        สาเหตุอาจเกิดจากการเรียงลำดับคำสั่งไม่ถูกต้อง
+                        หรือใส่คำสั่งไม่ครบ ดังนั้นเราจึงต้องตรวจสอบ
+                        การทำงานของโปรแกรมทีละขั้นตอน
+                        เพื่อค้นหาว่าข้อผิดพลาดเกิดขึ้นตรงไหน
+                        และแก้ไขให้ถูกต้อง
+                        การตรวจสอบและแก้ไขข้อผิดพลาดนี้เรียกว่า
+                        การตรวจหาข้อผิดพลาด หรือ Debugging
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        นอกจากการใช้ Code.org แล้ว
+                        เรายังสามารถฝึกการเขียนโปรแกรมด้วยบัตรคำสั่งได้
+                        โดยนำบัตรคำสั่งต่าง ๆ มาเรียงลำดับ
+                        เพื่อฝึกคิดอย่างเป็นขั้นตอนก่อนนำไปใช้กับโปรแกรมจริง
+
+                    </p>
+
+
+                    <br>
+
+
+                    <p>
+
+                        จากเรื่องที่เราเรียนรู้ในวันนี้ จะเห็นได้ว่า
+                        การเขียนโปรแกรมช่วยฝึกการคิดอย่างเป็นระบบ
+                        การวางแผน และการแก้ปัญหาอย่างมีเหตุผล
+                        ซึ่งเป็นทักษะสำคัญที่สามารถนำไปใช้ได้ทั้งในการเรียน
+                        และในชีวิตประจำวัน
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         MEDIA
+    ================================================== -->
+
+    <section
+        id="media"
+        class="page section">
+
+
+        <div class="container">
+
+
+            <h2 class="section-title">
+
+                🎬 สื่อการสอน
+
+            </h2>
+
+
+
+            <!-- PODCAST 1 -->
+
+            <div class="media-card">
+
+
+                <div class="media-icon">
+
+                    🎙️
+
+                </div>
+
+
+                <div class="media-content">
+
+
+                    <h3>
+
+                        Podcast ตอนที่ 1 : เสียงพูดจริง
+
+                    </h3>
+
+
+                    <p>
+
+                        Podcast ตอนนี้นำเสนอเรื่อง
+
+                        <strong>
+                            การเขียนโปรแกรมอย่างง่ายด้วย Code.org
+                        </strong>
+
+                        โดยอธิบายการใช้คำสั่ง
+                        และการทำงานตามลำดับขั้นตอน
+
+                    </p>
+
+
+                    <p>
+
+                        ผู้เรียนสามารถฟังเนื้อหา
+                        เพื่อทำความเข้าใจแนวคิดพื้นฐาน
+                        ของการเขียนโปรแกรม
+
+                    </p>
+                    <p>
+                        ใช้ Gemini สร้างหน้าปก
+                    </p>
+
+
+                    <a
+                        href="https://youtube.com/shorts/X9NWaaUGMPg?si=OXU88PWQT6BP9sqF"
+                        target="_blank"
+                        class="button">
+
+                        🎙️ เปิด Podcast เสียงพูดจริง
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- PODCAST 2 -->
+
+            <div class="media-card">
+
+
+                <div class="media-icon">
+
+                    🤖
+
+                </div>
+
+
+                <div class="media-content">
+
+
+                    <h3>
+
+                        Podcast ตอนที่ 2 : Podcast AI
+
+                    </h3>
+
+
+                    <p>
+
+                        Podcast ตอนนี้เป็นสื่อการเรียนรู้
+                        ที่สร้างขึ้นโดยใช้ AI
+                        เพื่อช่วยนำเสนอเนื้อหา
+                        เรื่องระบบทางเทคโนโลยี
+
+                    </p>
+
+
+                    <p>
+
+                        ผู้เรียนสามารถรับฟังเนื้อหา
+                        เพื่อทบทวนความรู้เกี่ยวกับ
+                        ระบบทางเทคโนโลยี
+
+                    </p>
+                    <p>
+                        ใช้ Gemini สร้างหน้าปก
+                    </p>
+                    <p>
+                        ใช้ Botnoi สร้างเสียง
+                    </p>
+
+
+                    <a
+                        href="https://youtube.com/shorts/cG4ySRJwE3I?si=xJpbFiWoKCmO7Ynb"
+                        target="_blank"
+                        class="button">
+
+                        🤖 เปิด Podcast AI
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- VDO OBS -->
+
+            <div class="media-card">
+
+
+                <div class="media-icon">
+
+                    🎥
+
+                </div>
+
+
+                <div class="media-content">
+
+
+                    <h3>
+
+                        VDO : การเรียนรู้เรื่องระบบทางเทคโนโลยี
+
+                    </h3>
+
+
+                    <p>
+
+                        วิดีโอนี้นำเสนอเนื้อหาเรื่อง
+                        <strong>
+                            ระบบทางเทคโนโลยี
+                        </strong>
+                        โดยอธิบายองค์ประกอบของระบบ ได้แก่
+                        ตัวป้อน (Input)
+                        กระบวนการ (Process)
+                        ผลผลิต (Output)
+                        และข้อมูลย้อนกลับ (Feedback)
+
+                    </p>
+
+
+                    <p>
+
+                        วิดีโอจัดทำโดยการบันทึกภาพหน้าจอด้วย
+                        <strong>
+                            OBS
+                        </strong>
+                        เพื่อแสดงเนื้อหาและตัวอย่าง
+
+                    </p>
+                    <p>
+                        ใช้ Gemini สร้างสไลด์นำเสนอ
+                    </p>
+
+
+                    <a
+                        href="https://youtu.be/Nn_5FxZT_U0?si=8bqbJRHWYXOp8SF0"
+                        target="_blank"
+                        class="button">
+
+                        🎥 เปิด VDO จาก OBS
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- VDO ละครสั้น -->
+
+            <div class="media-card">
+
+
+                <div class="media-icon">
+
+                    🎬
+
+                </div>
+
+
+                <div class="media-content">
+
+
+                    <h3>
+
+                        VDO : ละครสั้น
+
+                    </h3>
+
+
+                    <p>
+
+                        วิดีโอเพื่อการแสดง
+
+                        <strong>
+                            “อย่า หัก หลัง”
+                        </strong>
+
+                    </p>
+
+
+                    <p>
+
+                        วิดีโอจัดทำเพื่อการแสดง
+                        และนำเสนอในรูปแบบละครสั้น
+
+                    </p>
+
+
+                    <a
+                        href="https://youtu.be/BgF1yVB4jS0?si=QyrI5yVB4jS0"
+                        target="_blank"
+                        class="button">
+
+                        🎬 เปิด VDO ละครสั้น
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- AI -->
+
+            <div class="media-card">
+
+
+                <div class="media-icon">
+
+                    🔧
+
+                </div>
+
+
+                <div class="media-content">
+
+
+                    <h3>
+
+                        AI : สื่อการเรียนรู้ที่สร้างด้วย AI
+
+                    </h3>
+
+
+                    <p>
+
+                        ใช้เครื่องมือ AI ช่วยสร้างสื่อ
+                        และภาพประกอบ เพื่อให้ผู้เรียน
+                        เข้าใจเนื้อหาได้ง่ายขึ้น
+                        และช่วยสร้างความน่าสนใจในการเรียนรู้
+
+                    </p>
+
+
+                    <div class="ai-box">
+
+
+                        <h3>
+
+                            🧠 ตัวอย่างการใช้เครื่องมือการสอน AI
+
+                        </h3>
+
+
+                        <p>
+
+                            1. BOTNOI ที่ใช้ช่วยสร้างสื่อการเรียนรู้
+                            โดยสามารถนำข้อความมาแปลงเป็นเสียงพูด
+                            เพื่อนำไปประกอบ Podcast และสื่อการสอน
+                            ช่วยให้การนำเสนอเนื้อหามีความน่าสนใจ
+                            และหลากหลายมากขึ้น
+
+                        </p>
+
+
+                        <br>
+
+
+                        <p>
+
+                            2. NotebookLM ที่ช่วยวิเคราะห์และสรุปข้อมูล
+                            จากเอกสารหรือแหล่งข้อมูลที่ผู้ใช้กำหนด
+                            สามารถนำมาใช้ในการสรุปบทเรียน
+                            สร้างคำถาม จัดทำ Study Guide
+                            และสร้าง Podcast/Audio
+                            เพื่อช่วยให้การเรียนการสอนน่าสนใจ
+                            และเข้าใจง่ายขึ้น
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         E-BOOK
+    ================================================== -->
+
+    <section
+        id="ebook"
+        class="page section lesson-section">
+
+
+        <div class="container">
+
+
+            <h2 class="section-title">
+
+                📖 หนังสืออิเล็กทรอนิกส์ (E-book)
+
+            </h2>
+
+
+
+            <div class="ebook-box">
+
+
+                <h3>
+
+                    เรียนรู้เทคโนโลยีอย่างสร้างสรรค์
+
+                </h3>
+
+
+                <div class="ebook-frame">
+
+                    <iframe
+                        src="https://online.fliphtml5.com/wmgqvu/zlli/"
+                        title="E-book เรียนรู้เทคโนโลยีอย่างสร้างสรรค์"
+                        loading="lazy"
+                        allowfullscreen>
+                    </iframe>
+
+                </div>
+                    <p>
+                        <h3>
+                            ใช้ Gemini สร้างหน้าปกกับหน้าหลัง
+                        </h3>
+                    </p>
+
+                <div class="ebook-button-area">
+
+                    <a
+                        href="https://online.fliphtml5.com/wmgqvu/zlli/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button">
+
+                        📖 เปิด E-book เต็มหน้า
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         QUIZ / GIMKIT
+    ================================================== -->
+
+    <section
+        id="quiz"
+        class="page section lesson-section">
+
+
+        <div class="container">
+
+
+            <h1 class="section-title">
+
+                🎮 แบบทดสอบ
+
+            </h1>
+
+
+            <div class="quiz-box">
+
+
+                <h2
+                    style="text-align:center; color:#2563eb; margin-bottom:10px;">
+
+                    🎯 แบบทดสอบเรื่องระบบทางเทคโนโลยี
+
+                </h2>
+
+
+                        <p>
+                            <h3
+                                style="text-align:center; margin-bottom:30px;">
+                
+                                กดปุ่มด้านล่างเพื่อเปิดแบบทดสอบ Gimkit ในหน้าใหม่
+                            </h3>
+                        </p>
+
+
+                <div class="quiz-button-area">
+
+                    <a
+                        href="https://www.gimkit.com/view/6ab29d3bd760e85f93413789"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button">
+
+                        🎮 เข้าเล่นแบบทดสอบ Gimkit
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- WORDWALL -->
+
+            <div class="wordwall-box">
+
+
+                <h2
+                    style="text-align:center; color:#2563eb; margin-bottom:10px;">
+
+                    🧩 เกมทบทวนความรู้ด้วย Blooket
+
+                </h2>
+
+
+                    <p class="wordwall-description">
+                <h3>        
+                        เกมทบทวนความรู้เรื่องการเขียนโปรแกรมอย่างง่ายด้วย Code.org
+                        สำหรับนักเรียนชั้นประถมศึกษาปีที่ 2
+                </h3>
+                    </p>
+
+
+                <div class="wordwall-icon">
+
+                    🧩
+
+                </div>
+
+
+                    <p class="wordwall-description">
+                <h3>        
+                        กดปุ่มด้านล่างเพื่อเปิดกิจกรรม Blooket ในหน้าใหม่
+                </h3>
+                    </p>
+
+
+                <div class="wordwall-button-area">
+
+                    <a
+                        href="https://dashboard.blooket.com/set/6ab4d6bd0dd7f72c71c6650f"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button">
+
+                        🧩 เปิดกิจกรรม Blooket
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+
+        <p>
+
+            💻 ห้องเรียนรู้เทคโนโลยี
+
+        </p>
+
+
+        <p>
+
+            © 2026 เว็บไซต์สื่อการเรียนรู้
+
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+        function showPage(pageId) {
+
+
+            /* =========================
+               ซ่อนทุกหน้า
+            ========================= */
+
+            const pages =
+                document.querySelectorAll(".page");
+
+
+            pages.forEach(function(page) {
+
+                page.classList.remove("active");
+
+            });
+
+
+
+            /* =========================
+               แสดงหน้าที่เลือก
+            ========================= */
+
+            const selectedPage =
+                document.getElementById(pageId);
+
+
+            if (selectedPage) {
+
+                selectedPage.classList.add("active");
+
+            }
+
+
+
+            /* =========================
+               เปลี่ยนเมนู Active
+            ========================= */
+
+            const navLinks =
+                document.querySelectorAll("nav a");
+
+
+            navLinks.forEach(function(link) {
+
+
+                link.classList.remove("active");
+
+
+                const onclickText =
+                    link.getAttribute("onclick");
+
+
+                if (
+                    onclickText &&
+                    onclickText.includes(
+                        "'" + pageId + "'"
+                    )
+                ) {
+
+                    link.classList.add("active");
+
+                }
+
+            });
+
+
+
+            /* =========================
+               เลื่อนกลับด้านบน
+            ========================= */
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
